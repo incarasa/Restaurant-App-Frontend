@@ -4,7 +4,7 @@ const productsContainer = document.getElementById("products-container")
 const orderContainer = document.getElementById('order-container')
 const orderItems = document.getElementById('order-items')
 
-const orderArray = []
+let orderArray = []
 
 
 document.addEventListener("click", function(e) {
@@ -13,9 +13,11 @@ document.addEventListener("click", function(e) {
         orderArray.push(e.target.dataset.food)
         console.log(orderArray);
         renderOrder()
-        
-
         orderContainer.style.display = 'block'
+    }
+
+    else if (e.target.dataset.remove) {
+        removeProducts(e.target.dataset.remove)
     }
 })
 
@@ -41,23 +43,23 @@ function renderOrder() {
 
     if (numPizza) {
         htmlOrder += `  <div class="order-item">
-                            <p>Pizza x${numPizza}<span class="remove-item">remove</span></p>
-                            <p>${14 * numPizza}</p>
+                            <p>Pizza x${numPizza}<span class="remove-item" data-remove="Pizza">remove</span></p>
+                            <p>$${14 * numPizza}</p>
                         </div>`
     }
 
     if (numHamburguer) {
         
         htmlOrder += `  <div class="order-item">
-                            <p>Hamburguer x${numHamburguer}<span class="remove-item">remove</span></p>
-                            <p>${12 * numHamburguer}</p>
+                            <p>Hamburguer x${numHamburguer}<span class="remove-item" data-remove="Hamburger">remove</span></p>
+                            <p>$${12 * numHamburguer}</p>
                         </div>`
     }
 
     if (numBeer) {
         htmlOrder += `  <div class="order-item">
-                            <p>Beer x${numBeer}<span class="remove-item">remove</span></p>
-                            <p>${12 * numBeer}</p>
+                            <p>Beer x${numBeer}<span class="remove-item" data-remove="Beer">remove</span></p>
+                            <p>$${12 * numBeer}</p>
                         </div>`
     }
 
@@ -93,6 +95,13 @@ function renderProducts() {
 
     productsContainer.innerHTML = htmlArray
 
+}
+
+function removeProducts(product) {
+    orderArray = orderArray.filter(function(element) {
+        return element !== product
+    })
+    renderOrder()
 }
 
 renderProducts()
