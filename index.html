@@ -1,0 +1,68 @@
+<html>
+    <head>
+       <link rel="stylesheet" href="index.css">
+
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="main-banner">
+                <img src="media/banner.jpg" class="banner-principal">
+                <div class="banner-text">
+                    <h1>Jimmy's Dinner</h1>
+                    <h2>The best burgers in town</h2>
+                </div>
+            </div>
+
+            <main>
+                <div class="products" id="products-container">
+                    <!-- Aquí van los productos -->
+                    <div class="product">
+                        <div class="product-info">
+                            <div class="emoji-container">
+                                <p class="product-emoji">🍕</p>
+                            </div>
+                            <div>
+                                <h3>Pizza</h3>
+                                <p class="product-ingredients">Peperoni, mushrom, mozarella</p>
+                                <p class="product-price">$14</p>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="add-button">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-container" id="order-container">
+                    <h3 class="order-title">Your order</h3>
+
+                    <div id="order-items">
+                        <!-- Here the products -->
+                        <!-- <div class="order-item">
+                            <p>Pizza x1<span class="remove-item">remove</span></p>
+                            <p>$14</p>
+                        </div> -->
+                    </div>
+                    
+
+                    <!-- <div class="order-total-price">
+                        <p>Total price:</p>
+                        <p>$14</p>
+                    </div> -->
+
+                    <button>Complete order</button>
+                    
+                </div>
+                
+            </main>
+
+            <p class="oferta-texto" id="oferta-texto">Has presionado una oferta</p>
+        </div>
+	<script src="index.js" type="module"></script>
+    </body>
+</html>
+
