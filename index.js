@@ -3,6 +3,10 @@ import { menuArray } from '/data.js'
 const productsContainer = document.getElementById("products-container")
 const orderContainer = document.getElementById('order-container')
 const orderItems = document.getElementById('order-items')
+const completeOrderBtn = document.getElementById('complete-order-btn')
+const cardModal = document.getElementById('card-modal')
+const form = document.getElementById('form')
+const greetingsMsg = document.getElementById('greetings-msg')
 
 let orderArray = []
 
@@ -19,6 +23,27 @@ document.addEventListener("click", function(e) {
     else if (e.target.dataset.remove) {
         removeProducts(e.target.dataset.remove)
     }
+
+    else if (!e.target.closest('#card-modal') && 
+                e.target.id !== 'complete-order-btn' && 
+                cardModal.style.display === "block") {
+
+        cardModal.style.display = "none";
+    }
+})
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault()
+    cardModal.style.display = 'none'
+    orderContainer.style.display = 'none'
+    greetingsMsg.style.display = 'block'
+    disableButtons()
+
+})
+
+
+completeOrderBtn.addEventListener("click", function() {
+    cardModal.style.display = "block"
 })
 
 function renderOrder() {
@@ -102,6 +127,14 @@ function removeProducts(product) {
         return element !== product
     })
     renderOrder()
+}
+
+function disableButtons() {
+    let buttons = document.querySelectorAll('button')
+    buttons.forEach(element => {
+        element.disabled = true
+        element.style.cursor = 'not-allowed'
+    })
 }
 
 renderProducts()

@@ -54,9 +54,25 @@
                         <p>$14</p>
                     </div> -->
 
-                    <button>Complete order</button>
+                    <button id="complete-order-btn">Complete order</button>
                     
                 </div>
+
+                <!-- Card modal details -->
+                <div class="card-modal" id="card-modal">
+                <h3>Enter card details</h3>
+                <form id="form">
+                    <input type="text" required placeholder="Enter your name">
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" placeholder="Enter your card number" required>
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" placeholder="Enter yoru CVV" required>
+                    <button id="pay-btn">Pay</button>
+                </form>
+                </div>
+
+                <div class="greetigs-msg" id="greetings-msg">
+                    <p>Thanks! Your order is on its way!</p>
+                </div>
+                 
                 
             </main>
 
