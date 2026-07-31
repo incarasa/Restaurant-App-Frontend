@@ -6,7 +6,9 @@ A simple frontend for a restaurant ordering app developed using vanilla Javascri
 
 ## 📸 Preview
 
-![Project Preview](./preview.gif)
+<p align="center">
+  <img src="./preview.gif" alt="Restaurant ordering app preview" width="500">
+</p>
 
 ---
 
