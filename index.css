@@ -29,8 +29,8 @@ main {
 
 .banner-text {
     position: absolute;
-    top: 46px;
-    left: 46px;
+    top: 39px;
+    left: 200px;
     
 }
 
@@ -45,7 +45,7 @@ h1, h2{
 }
 
 h1 {
-    font-size: 39px;
+    font-size: 60px;
 }
 
 h2 {
